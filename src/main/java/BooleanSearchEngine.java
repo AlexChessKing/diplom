@@ -41,12 +41,19 @@ public class BooleanSearchEngine implements SearchEngine {
                 }
             }
         }
+        for (String newWord : content.keySet()) {
+            Collections.sort(content.get(newWord));
+        }
     }
 
     @Override
     public List<PageEntry> search(String word) {
-        List<PageEntry> result = content.get(word);
-        Collections.sort(result);
+        List<PageEntry> result;
+        if (content.get(word) == null) {
+            result = Collections.emptyList();
+        } else {
+            result = content.get(word);
+        }
         return result;
     }
 }

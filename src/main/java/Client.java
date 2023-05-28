@@ -13,7 +13,7 @@ public class Client {
              PrintWriter writer = new PrintWriter(socket.getOutputStream(), true);
              BufferedReader reader = new BufferedReader(new InputStreamReader(socket.getInputStream()))
             ) {
-            writer.println("бизнес");
+            writer.println("Монолитную");
             System.out.println(reader.readLine());
             while (reader.ready()) {
                 System.out.println(reader.readLine());
